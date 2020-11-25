@@ -1,6 +1,5 @@
 // The code for dayofweek was obtained at:
 // https://en.wikipedia.org/wiki/Determination_of_the_day_of_the_week
-
 #ifdef CS333_P1
 #include "types.h"
 #include "user.h"

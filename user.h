@@ -25,6 +25,19 @@ char* sbrk(int);
 int sleep(int);
 int uptime(void);
 int halt(void);
+//P1
+int date(struct rtcdate*);
+//P2
+uint getuid(void);
+uint getgid(void);
+uint getppid(void);
+int setuid(uint);
+int setgid(uint);
+int getprocs(uint max, struct uproc* table);
+//P4
+int setpriority(int pid, int priority);
+int getpriority(int pid);
+
 
 // ulib.c
 int stat(char*, struct stat*);

@@ -24,4 +24,11 @@
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) > (b) ? (a) : (b))
 
+#define DEFUID 0
+#define DEFGID 0
+
+#define MAXPRIO 6  // maximum number of priorities for scheduler
+#define DEFAULT_BUDGET (1*TPS)  //for MLFQ
+#define TICKS_TO_PROMOTE (3*TPS)
+
 #endif  // PDX_INCLUDE
