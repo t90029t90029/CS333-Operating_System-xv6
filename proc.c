@@ -1204,9 +1204,9 @@ wakeup(void *chan)
 int
 kill(int pid)
 {
-  struct proc *p;
-
   acquire(&ptable.lock);
+
+  struct proc *p;
 
   // P3 - Don't have to look at UNUSED list because they don't have PID's and
   // can't be killed.
@@ -1231,7 +1231,11 @@ kill(int pid)
       }
       assertState(p, SLEEPING, __FUNCTION__, __LINE__);	
       p->state = RUNNABLE;
+      #ifdef CS333_P4
+      stateListAdd(&ptable.ready[p->priority], p);
+      #else //P3
       stateListAdd(&ptable.list[RUNNABLE], p);
+      #endif //P4
 
       release(&ptable.lock);
       return 0;
